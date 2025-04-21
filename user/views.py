@@ -29,6 +29,7 @@ def upcycler_dashboard(request):
 def home(request):
     return render(request, 'user/home.html')
 
+#This is for sign up request
 def signup_view(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -43,7 +44,21 @@ def signup_view(request):
             login(request, user)
             return redirect('dashboard')
         
+        else:
+            form = SignupForm()
+        return render(request, 'user/signup.html', {'form':form})
+    
+#This is a login after you sign up 
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['passowrd']
+        password= authenticate(request, username=username, password=password)
+        if user:
+            login(request, user)
+            return redirect('dashboard')
+    return render(request, 'user/login.html')
+
+
 
     
-
-
