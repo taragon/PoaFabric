@@ -13,12 +13,18 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
 
+    def __str__(self):
+        return f"{self.user.username} - {self.role}"
 
-# functions to identify the user logged in
+
+# class to identify the user logged in
 class Item(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+    
     
