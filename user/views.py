@@ -64,4 +64,13 @@ def logout_view( request):
     logout(request)
     return redirect('home')
 
+#return user Login
+@login_required
+def dashboard(request):
+    role = request.user.profile.role
+    if role == 'recycler':
+        return redirect(recycler_dashboard)
+    elif role == 'upcycler':
+        return redirect(upcycler_dashboard)
+    
     
