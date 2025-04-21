@@ -1,8 +1,8 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from django.contrib.auth.models import User
 from .forms import SignupForm
 from .models import Profile, Item
 
@@ -35,23 +35,30 @@ def upcycler_dashboard(request):
 def home(request):
     return render(request, 'user/home.html')
 
-
 def signup_view(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
-            user = User.objects.create_user(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password']
-            )
-            user.profile.role = form.cleaned_data['role']
-            user.profile.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            role = form.cleaned_data['role']
+            
+            # Step 1: Create the user
+            user = User.objects.create_user(username=username, password=password)
+
+            # Step 2: Create a profile linked to that user
+            Profile.objects.create(user=user, role=role)
+
+            # Step 3: Log the user in
             login(request, user)
+
+            # Step 4: Redirect to dashboard
             return redirect('dashboard')
+        else:
+            return render(request, 'user/signup.html', {'form': form})
     else:
-        form = SignupForm()  
-    
-    return render(request, 'user/signup.html', {'form': form})  
+        form = SignupForm()
+        return render(request, 'user/signup.html', {'form': form})
 
 #This is a login after you sign up 
 def login_view(request):
