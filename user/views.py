@@ -7,7 +7,7 @@ from .models import Profile, Item
 
 
 
-
+'''
 # Create your views here.
 # This is a view to redirect each individual to the rightful dashboard 
 def login_redirect(request):
@@ -26,7 +26,7 @@ def recycler_dashboard(request):
 def upcycler_dashboard(request):
     #Show upcycaled items that is in upcycler.html
     return render(request, 'user/upcycler.html')
-
+'''
 
 
 
@@ -58,12 +58,23 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['passowrd']
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+        else:
+            return render(request, 'user/login.html', {'error': 'Invalid credentials'})
+        
+        return render(request, 'user/login.html')
+    
+        '''
         password= authenticate(request, username=username, password=password)
         if user:
             login(request, user)
             return redirect('dashboard')
     return render(request, 'user/login.html')
-
+'''
 # function for loging out
 def logout_view( request):
     logout(request)
@@ -85,7 +96,7 @@ def recycler_dashboard(request):
 
 #function to redirect user to upcycler dashboard
 @login_required
-def upcyler_dashboard(request):
+def upcycler_dashboard(request):
     items = Item.object.all()
     return render(request, 'user/upcycler.html', {'items': items})
 

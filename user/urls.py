@@ -8,5 +8,5 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('recycler/', views.recycler_dashboard, name='recycler_dashboard'),
-    path( 'upcycler'/ views.upcycler_dashboard, name='upcycler_dashboard'),
+    path( 'upcycler/', views.upcycler_dashboard, name='upcycler_dashboard'),
 ]
