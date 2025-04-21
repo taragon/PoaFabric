@@ -59,6 +59,9 @@ def login_view(request):
             return redirect('dashboard')
     return render(request, 'user/login.html')
 
-
+# function for loging out
+def logout_view( request):
+    logout(request)
+    return redirect('home')
 
     
