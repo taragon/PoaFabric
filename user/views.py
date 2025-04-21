@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.models import User
 from .forms import SignupForm
 from .models import Profile, Item
-from django.contrib.auth.decorators import login_required 
+
+
 
 
 # Create your views here.
@@ -24,6 +26,9 @@ def recycler_dashboard(request):
 def upcycler_dashboard(request):
     #Show upcycaled items that is in upcycler.html
     return render(request, 'user/upcycler.html')
+
+
+
 
 # creating homepage function
 def home(request):
