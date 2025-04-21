@@ -77,3 +77,9 @@ def dashboard(request):
 def recycler_dashboard(request):
     items = Item.objects.filter(posted_by=request.user)
     return render(request, 'user/recycler.html', {'items': items})
+
+#function to redirect user to upcycler dashboard
+@login_required
+def upcyler_dashboard(request):
+    items = Item.object.all()
+    return render(request, 'user/upcycler.html', {'items': items})
