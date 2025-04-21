@@ -1,0 +1,13 @@
+#creation of recycling page with items for recycling
+
+<h2>Recycler Dashboard</h2>
+<p>Welcome, {{ request.user.username}}</p>
+<h3>Your Recyclable Items:</h3>
+<u1>
+    {% for item in items %}
+        <1i>{{ item.name }} - {{ item.description }}</1i>
+    {% emtpy %}
+        <1i> No items yet.</1i>
+    {% end for %}
+</u1>
+<a href="{% url 'logout' %}">Logout</a>
