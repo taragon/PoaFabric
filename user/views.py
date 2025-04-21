@@ -73,4 +73,7 @@ def dashboard(request):
     elif role == 'upcycler':
         return redirect(upcycler_dashboard)
     
-    
+#Function to redirect user to recycler dashboard
+def recycler_dashboard(request):
+    items = Item.objects.filter(posted_by=request.user)
+    return render(request, 'user/recycler.html', {'items': items})
