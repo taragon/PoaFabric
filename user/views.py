@@ -83,3 +83,4 @@ def recycler_dashboard(request):
 def upcyler_dashboard(request):
     items = Item.object.all()
     return render(request, 'user/upcycler.html', {'items': items})
+
