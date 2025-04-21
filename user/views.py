@@ -52,13 +52,13 @@ def signup_view(request):
         
         else:
             form = SignupForm()
-        return render(request, 'user/signup.html', {'form':form})
+    return render(request, 'user/signup.html', {'form':form})
     
 #This is a login after you sign up 
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['passowrd']
+        password = request.POST['password']
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
@@ -67,15 +67,9 @@ def login_view(request):
         else:
             return render(request, 'user/login.html', {'error': 'Invalid credentials'})
         
-        return render(request, 'user/login.html')
-    
-        '''
-        password= authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('dashboard')
     return render(request, 'user/login.html')
-'''
+
+
 # function for loging out
 def logout_view( request):
     logout(request)
