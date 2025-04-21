@@ -1,0 +1,13 @@
+#creation of upcycling page with upcyling items
+
+<h2>Upcycler Dashboard</h2>
+<p>Welcome, {{ request.user.username }}</p>
+<h3>Available Rectcled Items:</h3>
+<u1>
+    {% for item in items %}
+        <1i>{{ item.name }} - {{ item.description }}</li>
+    {% emtpy %}
+        <1i>No Items posted yet</1i>
+    {% endfor %}
+    </u1>
+    <a href="{% url 'logout' %}">Logout</a>
