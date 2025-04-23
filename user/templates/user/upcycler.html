@@ -1,6 +1,5 @@
 <!-- upcycling dashboard -->
 
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,17 +16,14 @@
         </header>
 
         <section class="items-section">
-            <h2>Available Items for Upcycling</h2>
+            <h2>Item Categories for Upcycling</h2>
             <div class="items-grid">
-                {% for item in items %}
-                    <div class="item-card">
-                        <h3>{{ item.name }}</h3>
-                        <p>{{ item.description }}</p>
-                        <p><strong>Posted by:</strong> {{ item.posted_by.username }}</p>
-                    </div>
-                {% empty %}
-                    <p>No items currently available. Check back soon!</p>
-                {% endfor %}
+                <div class="item-card"><h3>Clothing</h3></div>
+                <div class="item-card"><h3>Home Textiles</h3></div>
+                <div class="item-card"><h3>Fashion Accessories</h3></div>
+                <div class="item-card"><h3>Decorative Textiles</h3></div>
+                <div class="item-card"><h3>Footwear</h3></div>
+                <div class="item-card"><h3>Industrial Textiles</h3></div>
             </div>
         </section>
 
@@ -43,7 +39,7 @@
 
         <section class="why-recycle">
             <h2>Why is Recycling Important?</h2>
-            <p>Recycling helps reduce waste in our environment, conserves natural resources, and supports a circular economy. By upcycling, you're not only reducing pollution but also turning waste into beauty and functionality. Be the change!</p>
+            <p>Recycling helps reduce the amount of waste that ends up in landfills, conserving valuable space and reducing pollution. It minimizes the need for new raw materials, preserving natural resources and lowering environmental impact. Recycling also cuts down on energy consumption during production processes. By upcycling materials, we give them a new life and reduce our carbon footprint. Ultimately, recycling is a powerful step toward a more sustainable, responsible future.</p>
         </section>
     </div>
 </body>
