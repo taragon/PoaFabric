@@ -176,6 +176,7 @@ ul li {
 }
 
 /*logout button */
+
 .logout-btn {
     position: fixed;
     bottom: 20px;
@@ -192,4 +193,13 @@ ul li {
 
 .logout-btn:hover {
     background-color: #e74c3c;
+}
+
+/*HoMEPAGE IMAGE */
+.hero-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
