@@ -1,13 +1,50 @@
-#creation of upcycling page with upcyling items
+<!-- upcycling dashboard -->
 
-<h2>Upcycler Dashboard</h2>
-<p>Welcome, {{ request.user.username }}</p>
-<h3>Available Rectcled Items:</h3>
-<u1>
-    {% for item in items %}
-        <1i>{{ item.name }} - {{ item.description }}</li>
-    {% empty %}
-        <1i>No Items posted yet</1i>
-    {% endfor %}
-    </u1>
-    <a href="{% url 'logout' %}">Logout</a>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upcycler Dashboard | Poafabric</title>
+    <link rel="stylesheet" href="{% static 'user/styles.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Welcome, Upcycler</h1>
+            <p>Here are items you can upcycle and nearby recycling centers.</p>
+        </header>
+
+        <section class="items-section">
+            <h2>Available Items for Upcycling</h2>
+            <div class="items-grid">
+                {% for item in items %}
+                    <div class="item-card">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                        <p><strong>Posted by:</strong> {{ item.posted_by.username }}</p>
+                    </div>
+                {% empty %}
+                    <p>No items currently available. Check back soon!</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="centers-section">
+            <h2>Recycling Centers</h2>
+            <ul>
+                <li>♻️ Strathmore University Recycling Center</li>
+                <li>♻️ Riara University Recycling Drop-Off</li>
+                <li>♻️ Kenyatta University Green Hub</li>
+                <li>♻️ City Market Plastic Drop-Off Point</li>
+            </ul>
+        </section>
+
+        <section class="why-recycle">
+            <h2>Why is Recycling Important?</h2>
+            <p>Recycling helps reduce waste in our environment, conserves natural resources, and supports a circular economy. By upcycling, you're not only reducing pollution but also turning waste into beauty and functionality. Be the change!</p>
+        </section>
+    </div>
+</body>
+</html>
