@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
 from .forms import SignupForm
 from .models import Profile, Item
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 
@@ -98,6 +99,6 @@ def recycler_dashboard(request):
 #function to redirect user to upcycler dashboard
 @login_required
 def upcycler_dashboard(request):
-    items = Item.object.all()
+    items = Item.objects.all()
     return render(request, 'user/upcycler.html', {'items': items})
 
