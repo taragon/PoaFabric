@@ -1,4 +1,4 @@
-body {
+.LP{
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
@@ -43,3 +43,43 @@ body {
     padding: 20px;
     background-color: #eee;
 }
+
+/* Signup and login CSS */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f8fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 350px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0077cc;
+}
+
+button {
+    width: 100%;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
