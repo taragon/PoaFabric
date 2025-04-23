@@ -56,7 +56,7 @@ def signup_view(request):
             # Step 4: Redirect to dashboard
             return redirect('dashboard')
         else:
-            return render(request, 'user/signup.html', {'form': form})
+            return redirect(request, 'home')
     else:
         form = SignupForm()
         return render(request, 'user/signup.html', {'form': form})
@@ -74,7 +74,7 @@ def login_view(request):
         else:
             return render(request, 'user/login.html', {'error': 'Invalid credentials'})
         
-    return render(request, 'user/login.html')
+    return redirect(request, 'home')
 
 
 # function for loging out
