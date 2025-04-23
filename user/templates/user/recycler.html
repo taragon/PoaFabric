@@ -1,13 +1,52 @@
-#creation of recycling page with items for recycling
+<!-- Recycling dashboard -->
 
-<h2>Recycler Dashboard</h2>
-<p>Welcome, {{ request.user.username}}</p>
-<h3>Your Recyclable Items:</h3>
-<u1>
-    {% for item in items %}
-        <1i>{{ item.name }} - {{ item.description }}</1i>
-    {% empty%}
-        <1i> No items yet.</1i>
-    {% endfor %}
-</u1>
-<a href="{% url 'logout' %}">Logout</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recycler Dashboard | Poafabric</title>
+    <link rel="stylesheet" href="{% static 'user/styles.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Welcome, Recycler</h1>
+            <p>Discover what you can recycle and the nearest recycling centers.</p>
+        </header>
+
+        <section class="items-section">
+            <h2>Items You Can Recycle</h2>
+            <div class="items-grid">
+                <div class="item-card"><h3>Clothing</h3></div>
+                <div class="item-card"><h3>Home Textiles</h3></div>
+                <div class="item-card"><h3>Fashion Accessories</h3></div>
+                <div class="item-card"><h3>Decorative Textiles</h3></div>
+                <div class="item-card"><h3>Footwear</h3></div>
+                <div class="item-card"><h3>Industrial Textiles</h3></div>
+            </div>
+        </section>
+
+        <section class="centers-section">
+            <h2>Recycling Centers</h2>
+            <ul>
+                <li>♻️ Strathmore University Recycling Center</li>
+                <li>♻️ Riara University Recycling Drop-Off</li>
+                <li>♻️ Kenyatta University Green Hub</li>
+                <li>♻️ City Market Plastic Drop-Off Point</li>
+            </ul>
+        </section>
+
+        <section class="importance-section">
+            <h2>Why Recycling Matters</h2>
+            <ul>
+                <li>✅ Reduces pollution and conserves natural resources</li>
+                <li>✅ Lowers greenhouse gas emissions and fights climate change</li>
+                <li>✅ Saves energy used in manufacturing new products</li>
+                <li>✅ Prevents textile waste from ending up in landfills</li>
+                <li>✅ Creates job opportunities in the recycling and upcycling industries</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
