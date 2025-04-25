@@ -94,84 +94,136 @@ button:hover {
 }
 
 /* upcycling dashboard */
-            
-.dashboard-container {
-    padding: 40px;
-    font-family: 'Segoe UI', sans-serif;
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0fdf4;
+    color: #2e7d32;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 100, 0, 0.1);
+}
+
+/* Header */
 .dashboard-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.items-section, .centers-section, .why-recycle {
-    margin-bottom: 50px;
+.dashboard-header h1 {
+    font-size: 2.5em;
+    color: #1b5e20;
+    margin-bottom: 10px;
 }
 
+.dashboard-header p {
+    font-size: 1.2em;
+    color: #4caf50;
+}
+
+/* Section Headings */
+.items-section h2,
+.centers-section h2,
+.importance-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+/* Item Grid */
 .items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
+    margin-bottom: 40px;
 }
 
 .item-card {
-    border: 1px solid #ddd;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    text-align: center;
+    font-weight: bold;
+    color: #2e7d32;
+    transition: all 0.3s ease;
 }
 
+.item-card:hover {
+    background-color: #c8e6c9;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Centers List */
 .centers-section ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
 }
 
 .centers-section li {
-    background-color: #e6f4ea;
+    background: #e0f2f1;
     margin: 10px 0;
-    padding: 10px;
-    border-left: 4px solid #4CAF50;
-}
-.items-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.item-card {
-    border: 1px solid #ddd;
-    padding: 20px;
+    padding: 10px 15px;
     border-radius: 8px;
-    background-color: #f1f9f6;
-    text-align: center;
-    font-weight: bold;
+    font-weight: 500;
 }
-    .donate-btn.small {
-        display: inline-block;
-        padding: 10px 20px;            /* A bit more padding for larger feel */
-        font-size: 18px;               /* 👈 Increased text size */
-        font-weight: bold;            /* Optional: makes text stand out */
-        background-color: #28a745;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-left: 10px;
-        width: auto !important;
-        text-align: center;
-        white-space: nowrap;          /* Keeps the button text on one line */
-    }
-    
-    .donate-btn.small:hover {
-        background-color: #218838;
-    }
-    
 
-.donate-btn.small:hover {
-    background-color: #218838;
+/* Importance Section */
+.importance-section {
+    background: #f1f8e9;
+    padding: 20px;
+    border-left: 5px solid #81c784;
+    margin-bottom: 40px;
+    border-radius: 10px;
 }
+
+/* Buttons */
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.donate-btn,
+.logout-btn {
+    background-color: #43a047;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donate-btn:hover,
+.logout-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* Responsive Iframe */
+iframe {
+    border-radius: 10px;
+    border: 2px solid #a5d6a7;
+}
+
 
 
 /*recycler dashboard */

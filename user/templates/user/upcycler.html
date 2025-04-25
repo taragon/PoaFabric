@@ -8,15 +8,13 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Header -->
         <header class="dashboard-header">
             <h1>Welcome, Upcycler</h1>
-            <p>Here are items you can upcycle and nearby recycling centers.</p>
+            <p>Explore what you can upcycle and find upcycling centers near you.</p>
         </header>
 
-        <!-- Item Categories -->
         <section class="items-section">
-            <h2>Item Categories for Upcycling</h2>
+            <h2>Items You Can Upcycle</h2>
             <div class="items-grid">
                 <div class="item-card"><h3>Clothing</h3></div>
                 <div class="item-card"><h3>Home Textiles</h3></div>
@@ -27,59 +25,52 @@
             </div>
         </section>
 
-        <!-- Upcycling Centers + Donate Button -->
         <section class="centers-section">
-            <div class="centers-header">
-                <h2>Upcycling Centers</h2>
-               </div>
+            <h2>Upcycling Centers</h2>
             <ul>
                 <li>♻️ Strathmore University Upcycling Center</li>
                 <li>♻️ Riara University Upcycling Drop-Off</li>
                 <li>♻️ Kenyatta University Green Hub</li>
-                <li>♻️ City Market Plastic Drop-Off Point</li>
-                
+                <li>♻️ City Market Textile Collection Point</li>
             </ul>
         </section>
 
-        <!-- Why Upcycling is Important -->
-        <section class="why-recycle">
-            <h2>Why is Upcycling Important?</h2>
-            <p>
-                Upcycling helps reduce the amount of waste that ends up in landfills, conserving valuable space and reducing pollution.
-                It minimizes the need for new raw materials, preserving natural resources and lowering environmental impact.
-                Upcycling also cuts down on energy consumption during production processes. By upcycling materials, we give them a new life
-                and reduce our carbon footprint. Ultimately, upcycling is a powerful step toward a more sustainable, responsible future.
-                <br><br>
-                Upcycling plays a role in our employment sector, with few requirements needed for employment — making it suitable to combat the rising rate of unemployment in our country.
-                Through upcycling, we are able to combat and mitigate climate change and take climate action.
-            </p>
+        <section class="importance-section">
+            <h2>Why Upcycling Matters</h2>
+            <ul>
+                <li>✅ Reduces textile waste and environmental pollution</li>
+                <li>✅ Gives old materials a second life as valuable items</li>
+                <li>✅ Saves money and promotes creativity</li>
+                <li>✅ Cuts down on production energy and raw material use</li>
+                <li>✅ Creates job opportunities and supports local artisans</li>
+            </ul>
         </section>
-     
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
-        target="_blank" 
-        class="donate-btn small">Donate</a>
-     
 
-        <!-- Hidden Donation Form -->
-        <div id="donation-form" style="display: none; margin-top: 30px;">
-            <h2>Donation Form</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform?embedded=true"
-                width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <section class="progress-impact">
+            <h2>Our Upcycling Impact</h2>
+            <p>Textiles Upcycled This Month:</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%;">60%</div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-card">
+                <p>"I turned my old t-shirts into grocery bags using PoaFabric guides. It's so easy and fun!"</p>
+                <strong>– Mercy, Creative Maker</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"PoaFabric connected me with upcycling centers that helped me start my own project!"</p>
+                <strong>– Kevin, Innovator</strong>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
+                target="_blank" class="donate-btn">Donate</a>
         </div>
     </div>
-
-    <!-- Logout Button -->
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
-    </div>
-
-    <!-- Toggle Form Script -->
-    <script>
-        function toggleForm() {
-            var formDiv = document.getElementById('donation-form');
-            formDiv.style.display = (formDiv.style.display === 'none') ? 'block' : 'none';
-        }
-    </script>
 </body>
 </html>
-
