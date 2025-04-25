@@ -308,6 +308,44 @@ iframe {
     margin-top: 10px;
     font-size: 18px;
 }
+/* award badge*/
+.badge-section {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .user-badge {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 20px auto;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .user-badge:hover {
+    animation: bounce 1s infinite;
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.8);
+    opacity: 1;
+  }
+  
+  .gold { background: #ffd700; }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
 
 
 /*recycler dashboard */
@@ -533,6 +571,8 @@ ul li {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
+
+  
   
 
 

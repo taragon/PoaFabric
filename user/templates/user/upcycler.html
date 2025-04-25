@@ -163,6 +163,14 @@
         </div>
     </div>
 </section>
+
+<section class="badge-section">
+    <h2>Your Upcycle Badge</h2>
+    <div class="user-badge" id="upcycleBadge" title="Top Upcycler Award">
+      🥇<p>Gold Upcycler</p>
+    </div>
+  </section>
+  
         <div class="button-container">
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
@@ -191,6 +199,17 @@
             element.style.display = 'block';
           }
         }
+      </script>
+    
+      <script>
+        const upcycleBadge = document.getElementById("upcycleBadge");
+      
+        function showGoldBadge() {
+          upcycleBadge.classList.add("gold");
+          upcycleBadge.innerHTML = "🥇<p>Gold Upcycler</p>";
+        }
+      
+        showGoldBadge(); // Assume always top upcycler for now
       </script>
       
 </body>
