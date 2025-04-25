@@ -23,7 +23,7 @@ def signup_view(request):
             user = User.objects.create_user(username=username, password=password)
             Profile.objects.create(user=user, role=role)
             login(request, user)
-            return redirect('dashboard')
+            return redirect('login')
         else:
             return render(request, 'user/signup.html', {'form': form})
     else:
