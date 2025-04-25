@@ -203,3 +203,22 @@ ul li {
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/*donate button*/
+.donate-btn {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.donate-btn:hover {
+    background-color: #218838;
+}
