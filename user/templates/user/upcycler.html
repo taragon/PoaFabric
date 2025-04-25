@@ -21,10 +21,10 @@
                     <h3>👕 Clothing</h3>
                     <div class="item-details">
                         <ul>
-                            <li>👚 Old Shirts → Tote Bags</li>
-                            <li>👖 Jeans → Pouches</li>
-                            <li>🧥 Jackets → Aprons</li>
-                            <li>👗 Dresses → Skirts</li>
+                            <li>👚 Old Shirts-Tote Bags</li>
+                            <li>👖 Jeans-Pouches</li>
+                            <li>🧥 Jackets-Aprons</li>
+                            <li>👗 Dresses-Skirts</li>
                         </ul>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                     <h3>🛏️ Home Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🛌 Bedsheets → Curtains</li>
-                            <li>🛋️ Blankets → Pet Beds</li>
-                            <li>🪟 Curtains → Cushion Covers</li>
+                            <li>🛌 Bedsheets-Curtains</li>
+                            <li>🛋️ Blankets-Pet Beds</li>
+                            <li>🪟 Curtains-Cushion Covers</li>
                         </ul>
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                     <h3>👜 Fashion Accessories</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🧢 Caps → Coin Pouches</li>
-                            <li>🧤 Gloves → Stuffed Toys</li>
-                            <li>🧣 Scarves → Headbands</li>
+                            <li>🧢 Caps-Coin Pouches</li>
+                            <li>🧤 Gloves-Stuffed Toys</li>
+                            <li>🧣 Scarves-Headbands</li>
                         </ul>
                     </div>
                 </div>
@@ -55,9 +55,9 @@
                     <h3>🎨 Decorative Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🖼️ Wall Hangings → Fabric Art</li>
-                            <li>🪑 Table Runners → Quilts</li>
-                            <li>🪟 Curtains → Fabric Storage Bins</li>
+                            <li>🖼️ Wall Hangings-Fabric Art</li>
+                            <li>🪑 Table Runners-Quilts</li>
+                            <li>🪟 Curtains-Fabric Storage Bins</li>
                         </ul>
                     </div>
                 </div>
@@ -66,8 +66,8 @@
                     <h3>👟 Footwear</h3>
                     <div class="item-details">
                         <ul>
-                            <li>👞 Old Shoes → Planters</li>
-                            <li>🩴 Flip Flops → Key Holders</li>
+                            <li>👞 Old Shoes-Planters</li>
+                            <li>🩴 Flip Flops-Key Holders</li>
                         </ul>
                     </div>
                 </div>
@@ -76,8 +76,8 @@
                     <h3>🏭 Industrial Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🧤 Work Gloves → Pot Holders</li>
-                            <li>🦺 Reflective Vests → Bike Accessories</li>
+                            <li>🧤 Work Gloves-Pot Holders</li>
+                            <li>🦺 Reflective Vests-Bike Accessories</li>
                         </ul>
                     </div>
                 </div>
@@ -87,15 +87,46 @@
         
 
         <section class="centers-section">
-            <h2>Upcycling Centers</h2>
-            <ul>
-                <li>♻️ Strathmore University Upcycling Center</li>
-                <li>♻️ Riara University Upcycling Drop-Off</li>
-                <li>♻️ Kenyatta University Green Hub</li>
-                <li>♻️ City Market Textile Collection Point</li>
+            <h2>Recycling Centers</h2>
+            <ul class="recycling-centers">
+              <li onclick="toggleContact('center1')">
+                <strong>♻️ Strathmore University Recycling Center</strong>
+                <div id="center1" class="contact-info" style="display: none;">
+                  📍 Madaraka, Nairobi<br>
+                  📞 +254 700 123 456<br>
+                  📧 recycle@strathmore.edu
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center2')">
+                <strong>♻️ Riara University Recycling Drop-Off</strong>
+                <div id="center2" class="contact-info" style="display: none;">
+                  📍 Mbagathi Way, Nairobi<br>
+                  📞 +254 711 654 321<br>
+                  📧 green@riara.ac.ke
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center3')">
+                <strong>♻️ Kenyatta University Green Hub</strong>
+                <div id="center3" class="contact-info" style="display: none;">
+                  📍 Thika Road, Nairobi<br>
+                  📞 +254 722 222 222<br>
+                  📧 ku-green@ku.ac.ke
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center4')">
+                <strong>♻️ City Market Plastic Drop-Off Point</strong>
+                <div id="center4" class="contact-info" style="display: none;">
+                  📍 City Market, Nairobi CBD<br>
+                  📞 +254 733 444 555<br>
+                  📧 marketdrop@nairobicity.go.ke
+                </div>
+              </li>
             </ul>
-        </section>
-
+          </section>
+          
         <section class="importance-section">
             <h2>Why Upcycling Matters</h2>
             <ul>
@@ -142,5 +173,20 @@
         }
     </script>
     
+    <script>
+        function toggleContact(id) {
+          const element = document.getElementById(id);
+          const isVisible = element.style.display === 'block';
+      
+          // Close all contact info blocks
+          document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
+      
+          // Toggle the one that was clicked
+          if (!isVisible) {
+            element.style.display = 'block';
+          }
+        }
+      </script>
+      
 </body>
 </html>

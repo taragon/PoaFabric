@@ -90,17 +90,47 @@
             </div>
         </section>
         
-        
-
         <section class="centers-section">
             <h2>Recycling Centers</h2>
-            <ul>
-                <li>♻️ Strathmore University Recycling Center</li>
-                <li>♻️ Riara University Recycling Drop-Off</li>
-                <li>♻️ Kenyatta University Green Hub</li>
-                <li>♻️ City Market Plastic Drop-Off Point</li>
+            <ul class="recycling-centers">
+              <li onclick="toggleContact('center1')">
+                <strong>♻️ Strathmore University Recycling Center</strong>
+                <div id="center1" class="contact-info" style="display: none;">
+                  📍 Madaraka, Nairobi<br>
+                  📞 +254 700 123 456<br>
+                  📧 recycle@strathmore.edu
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center2')">
+                <strong>♻️ Riara University Recycling Drop-Off</strong>
+                <div id="center2" class="contact-info" style="display: none;">
+                  📍 Mbagathi Way, Nairobi<br>
+                  📞 +254 711 654 321<br>
+                  📧 green@riara.ac.ke
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center3')">
+                <strong>♻️ Kenyatta University Green Hub</strong>
+                <div id="center3" class="contact-info" style="display: none;">
+                  📍 Thika Road, Nairobi<br>
+                  📞 +254 722 222 222<br>
+                  📧 ku-green@ku.ac.ke
+                </div>
+              </li>
+          
+              <li onclick="toggleContact('center4')">
+                <strong>♻️ City Market Plastic Drop-Off Point</strong>
+                <div id="center4" class="contact-info" style="display: none;">
+                  📍 City Market, Nairobi CBD<br>
+                  📞 +254 733 444 555<br>
+                  📧 marketdrop@nairobicity.go.ke
+                </div>
+              </li>
             </ul>
-        </section>
+          </section>
+          
 
         <section class="importance-section">
             <h2>Why Recycling Matters</h2>
@@ -147,6 +177,24 @@
             details.style.display = isVisible ? "none" : "block";
         }
     </script>
+
+    <script>
+        function toggleContact(id) {
+          const element = document.getElementById(id);
+          const isVisible = element.style.display === 'block';
+      
+          // Close all contact info blocks
+          document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
+      
+          // Toggle the one that was clicked
+          if (!isVisible) {
+            element.style.display = 'block';
+          }
+        }
+      </script>
+       
+
+
     
 </body>
 </html>
