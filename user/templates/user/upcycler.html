@@ -14,16 +14,77 @@
         </header>
 
         <section class="items-section">
-            <h2>Items You Can Upcycle</h2>
+            <h2>Item Categories for Upcycling</h2>
             <div class="items-grid">
-                <div class="item-card"><h3>Clothing</h3></div>
-                <div class="item-card"><h3>Home Textiles</h3></div>
-                <div class="item-card"><h3>Fashion Accessories</h3></div>
-                <div class="item-card"><h3>Decorative Textiles</h3></div>
-                <div class="item-card"><h3>Footwear</h3></div>
-                <div class="item-card"><h3>Industrial Textiles</h3></div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👕 Clothing</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>👚 Old Shirts → Tote Bags</li>
+                            <li>👖 Jeans → Pouches</li>
+                            <li>🧥 Jackets → Aprons</li>
+                            <li>👗 Dresses → Skirts</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🛏️ Home Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🛌 Bedsheets → Curtains</li>
+                            <li>🛋️ Blankets → Pet Beds</li>
+                            <li>🪟 Curtains → Cushion Covers</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👜 Fashion Accessories</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🧢 Caps → Coin Pouches</li>
+                            <li>🧤 Gloves → Stuffed Toys</li>
+                            <li>🧣 Scarves → Headbands</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🎨 Decorative Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🖼️ Wall Hangings → Fabric Art</li>
+                            <li>🪑 Table Runners → Quilts</li>
+                            <li>🪟 Curtains → Fabric Storage Bins</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👟 Footwear</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>👞 Old Shoes → Planters</li>
+                            <li>🩴 Flip Flops → Key Holders</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🏭 Industrial Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🧤 Work Gloves → Pot Holders</li>
+                            <li>🦺 Reflective Vests → Bike Accessories</li>
+                        </ul>
+                    </div>
+                </div>
+        
             </div>
         </section>
+        
 
         <section class="centers-section">
             <h2>Upcycling Centers</h2>
@@ -72,5 +133,14 @@
                 target="_blank" class="donate-btn">Donate</a>
         </div>
     </div>
+
+    <script>
+        function toggleDetails(card) {
+            const details = card.querySelector(".item-details");
+            const isVisible = details.style.display === "block";
+            details.style.display = isVisible ? "none" : "block";
+        }
+    </script>
+    
 </body>
 </html>

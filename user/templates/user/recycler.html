@@ -5,25 +5,92 @@
     <meta charset="UTF-8">
     <title>Recycler Dashboard | Poafabric</title>
     <link rel="stylesheet" href="{% static 'user/styles.css' %}">
+   
 </head>
 <body>
     <div class="dashboard-container">
         <header class="dashboard-header">
-            <h1>Welcome, Recycler</h1>
+            <h1>Welcome To Recycling</h1>
             <p>Discover what you can recycle and the nearest recycling centers.</p>
         </header>
 
         <section class="items-section">
             <h2>Items You Can Recycle</h2>
             <div class="items-grid">
-                <div class="item-card"><h3>Clothing</h3></div>
-                <div class="item-card"><h3>Home Textiles</h3></div>
-                <div class="item-card"><h3>Fashion Accessories</h3></div>
-                <div class="item-card"><h3>Decorative Textiles</h3></div>
-                <div class="item-card"><h3>Footwear</h3></div>
-                <div class="item-card"><h3>Industrial Textiles</h3></div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👕 Clothing</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>👚 T-Shirts</li>
+                            <li>👖 Jeans</li>
+                            <li>🧥 Jackets</li>
+                            <li>👗 Dresses</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🛏️ Home Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🛌 Bed Sheets</li>
+                            <li>🛋️ Blankets</li>
+                            <li>🪟 Curtains</li>
+                            <li>🛏 Pillowcases</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👜 Fashion Accessories</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🧢 Hats</li>
+                            <li>🧤 Gloves</li>
+                            <li>🧣 Scarves</li>
+                            <li>👒 Belts</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🎨 Decorative Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>🖼️ Wall Hangings</li>
+                            <li>🪟 Fabric Decor</li>
+                            <li>🪑 Table Runners</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>👟 Footwear</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>👞 Shoes</li>
+                            <li>🥾 Boots</li>
+                            <li>🩴 Sandals</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="item-card" onclick="toggleDetails(this)">
+                    <h3>🏭 Industrial Textiles</h3>
+                    <div class="item-details">
+                        <ul>
+                            <li>👷 Workwear</li>
+                            <li>🧤 Safety Gloves</li>
+                            <li>🦺 Uniforms</li>
+                        </ul>
+                    </div>
+                </div>
+        
             </div>
         </section>
+        
+        
 
         <section class="centers-section">
             <h2>Recycling Centers</h2>
@@ -72,5 +139,14 @@
                 target="_blank" class="donate-btn">Donate</a>
         </div>
     </div>
+
+    <script>
+        function toggleDetails(card) {
+            const details = card.querySelector(".item-details");
+            const isVisible = details.style.display === "block";
+            details.style.display = isVisible ? "none" : "block";
+        }
+    </script>
+    
 </body>
 </html>
