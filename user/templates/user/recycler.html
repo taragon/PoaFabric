@@ -143,6 +143,15 @@
                 <li>✅ Creates job opportunities in recycling and upcycling</li>
             </ul>
         </section>
+
+        <section class="badge-section">
+  <h2>Your Badge</h2>
+  <div class="user-badge" id="userBadge" title="Your recycling progress badge">
+    🥉<p>Bronze Recycler</p>
+  </div>
+</section>
+
+          
         <section class="progress-impact">
             <h2>Our Recycling Impact</h2>
             <p>Textiles Recycled This Month:</p>
@@ -244,8 +253,26 @@
         // Auto rotate every 6 seconds
         setInterval(nextTestimonial, 6000);
     </script>
-    
-    
+    <script>
+        const userBadge = document.getElementById("userBadge");
+        const userContribution = 12; // Simulate real data here
+      
+        function assignBadge(count) {
+          if (count >= 20) {
+            userBadge.classList.add("gold");
+            userBadge.innerHTML = "🥇<p>Gold Recycler</p>";
+          } else if (count >= 10) {
+            userBadge.classList.add("silver");
+            userBadge.innerHTML = "🥈<p>Silver Recycler</p>";
+          } else {
+            userBadge.classList.add("bronze");
+            userBadge.innerHTML = "🥉<p>Bronze Recycler</p>";
+          }
+        }
+      
+        assignBadge(userContribution);
+      </script>
+      
     
 </body>
 </html>
