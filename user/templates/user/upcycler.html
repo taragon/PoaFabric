@@ -8,11 +8,13 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <!-- Header -->
         <header class="dashboard-header">
             <h1>Welcome, Upcycler</h1>
             <p>Here are items you can upcycle and nearby recycling centers.</p>
         </header>
 
+        <!-- Item Categories -->
         <section class="items-section">
             <h2>Item Categories for Upcycling</h2>
             <div class="items-grid">
@@ -25,39 +27,53 @@
             </div>
         </section>
 
+        <!-- Upcycling Centers + Donate Button -->
         <section class="centers-section">
-            <h2>Upcycling Centers</h2>
+            <div class="centers-header">
+                <h2>Upcycling Centers</h2>
+               </div>
             <ul>
                 <li>♻️ Strathmore University Upcycling Center</li>
                 <li>♻️ Riara University Upcycling Drop-Off</li>
                 <li>♻️ Kenyatta University Green Hub</li>
                 <li>♻️ City Market Plastic Drop-Off Point</li>
+                
             </ul>
         </section>
 
+        <!-- Why Upcycling is Important -->
         <section class="why-recycle">
             <h2>Why is Upcycling Important?</h2>
-            <p>Upcycling helps reduce the amount of waste that ends up in landfills, conserving valuable space and reducing pollution. It minimizes the need for new raw materials, preserving natural resources and lowering environmental impact. Upcycling also cuts down on energy consumption during production processes. By upcycling materials, we give them a new life and reduce our carbon footprint. Ultimately, upcycling is a powerful step toward a more sustainable, responsible future.
-              <br>Upcycling plays a role in our employment sector, few requirments are needed for employment making it suitable to combat the rising rate of unemployment in our country.
-              Through upcycling we are able to combat and mitigate climate change and take climate action.  
+            <p>
+                Upcycling helps reduce the amount of waste that ends up in landfills, conserving valuable space and reducing pollution.
+                It minimizes the need for new raw materials, preserving natural resources and lowering environmental impact.
+                Upcycling also cuts down on energy consumption during production processes. By upcycling materials, we give them a new life
+                and reduce our carbon footprint. Ultimately, upcycling is a powerful step toward a more sustainable, responsible future.
+                <br><br>
+                Upcycling plays a role in our employment sector, with few requirements needed for employment — making it suitable to combat the rising rate of unemployment in our country.
+                Through upcycling, we are able to combat and mitigate climate change and take climate action.
             </p>
         </section>
+     
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
+        target="_blank" 
+        class="donate-btn small">Donate</a>
+     
+
+        <!-- Hidden Donation Form -->
+        <div id="donation-form" style="display: none; margin-top: 30px;">
+            <h2>Donation Form</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform?embedded=true"
+                width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
     </div>
 
-    <!-- 🔘 Logout and Donate buttons -->
-    <div style="margin-top: 20px;">
+    <!-- Logout Button -->
+    <div style="text-align: center; margin-top: 30px;">
         <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
-        <button onclick="toggleForm()" class="donate-btn">Donate</button>
     </div>
 
-    <!-- 📩 Hidden Google Form Section -->
-    <div id="donation-form" style="display: none; margin-top: 30px;">
-        <h2>Donation Form</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform?embedded=true"
-            width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-
-    <!-- 🔁 Toggle Script -->
+    <!-- Toggle Form Script -->
     <script>
         function toggleForm() {
             var formDiv = document.getElementById('donation-form');

@@ -42,34 +42,35 @@
                 <li>✅ Lowers greenhouse gas emissions and fights climate change</li>
                 <li>✅ Saves energy used in manufacturing new products</li>
                 <li>✅ Prevents textile waste from ending up in landfills</li>
-                <li>✅ Creates job opportunities in the recycling and upcycling industries</li>
+                <li>✅ Creates job opportunities in recycling and upcycling</li>
             </ul>
         </section>
+
+        <section class="progress-impact">
+            <h2>Our Recycling Impact</h2>
+            <p>Textiles Recycled This Month:</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 75%;">75%</div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-card">
+                <p>"PoaFabric helped me easily find recycling centers near my school. I feel like I'm part of something big!"</p>
+                <strong>– Amina, Student</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"I turned old jeans into bags and sold them. Thanks to PoaFabric for the upcycling ideas!"</p>
+                <strong>– Brian, Upcycler</strong>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
+                target="_blank" class="donate-btn">Donate</a>
+        </div>
     </div>
-
-    <!-- 🔘 Logout and Donate buttons -->
-<div style="margin-top: 20px;">
-    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
-    <button onclick="toggleForm()" class="donate-btn">Donate</button>
-</div>
-
-<!-- 📩 Hidden Google Form Section -->
-<div id="donation-form" style="display: none; margin-top: 30px;">
-    <h2>Donation Form</h2>
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform?embedded=true"
-        width="640" height="1197" frameborder="0" marginheight="0" marginwidth="0">
-        Loading…
-    </iframe>
-</div>
-
-<!-- 🔁 Toggle Script -->
-<script>
-    function toggleForm() {
-        const formDiv = document.getElementById('donation-form');
-        formDiv.style.display = formDiv.style.display === 'none' ? 'block' : 'none';
-    }
-</script>
-
 </body>
 </html>
