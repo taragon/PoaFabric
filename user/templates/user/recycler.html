@@ -9,10 +9,11 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <header class="dashboard-header">
-            <h1>Welcome To Recycling</h1>
+        <header class="dashboard-header green-bar">
+            <h1>Welcome to Recycle</h1>
             <p>Discover what you can recycle and the nearest recycling centers.</p>
         </header>
+        
 
         <section class="items-section">
             <h2>Items You Can Recycle</h2>
@@ -142,26 +143,23 @@
                 <li>✅ Creates job opportunities in recycling and upcycling</li>
             </ul>
         </section>
-
         <section class="progress-impact">
             <h2>Our Recycling Impact</h2>
             <p>Textiles Recycled This Month:</p>
             <div class="progress-bar">
-                <div class="progress" style="width: 75%;">75%</div>
+                <div class="progress" id="progress-bar">0%</div>
             </div>
         </section>
-
+        
         <section class="testimonials">
             <h2>What Our Users Say</h2>
-            <div class="testimonial-card">
+            <div class="testimonial-card" id="testimonial-text">
                 <p>"PoaFabric helped me easily find recycling centers near my school. I feel like I'm part of something big!"</p>
                 <strong>– Amina, Student</strong>
             </div>
-            <div class="testimonial-card">
-                <p>"I turned old jeans into bags and sold them. Thanks to PoaFabric for the upcycling ideas!"</p>
-                <strong>– Brian, Recycler</strong>
-            </div>
+            <button onclick="nextTestimonial()">Next Testimonial</button>
         </section>
+        
 
         <div class="button-container">
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
@@ -194,7 +192,60 @@
       </script>
        
 
+      <script>
+        // Animate Progress Bar
+        function animateProgressBar(targetPercent) {
+            const bar = document.getElementById("progress-bar");
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= targetPercent) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    bar.style.width = width + "%";
+                    bar.innerText = width + "%";
+                }
+            }, 20);
+        }
+    
+        window.onload = function () {
+            animateProgressBar(75);  // Change 75 to your actual count % if dynamic
+        };
+    </script>
 
+    <script>
+        // Testimonials Data
+        const testimonials = [
+            {
+                text: `"PoaFabric helped me easily find recycling centers near my school. I feel like I'm part of something big!"`,
+                author: "– Amina, Student"
+            },
+            {
+                text: `"I turned old jeans into bags and sold them. Thanks to PoaFabric for the upcycling ideas!"`,
+                author: "– Brian, Upcycler"
+            },
+            {
+                text: `"The dashboard is easy to use and educational. I’ve learned so much!"`,
+                author: "– Faith, Recycler"
+            }
+        ];
+    
+        let testimonialIndex = 0;
+    
+        function nextTestimonial() {
+            testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+            const card = document.getElementById("testimonial-text");
+            card.innerHTML = `
+                <p>${testimonials[testimonialIndex].text}</p>
+                <strong>${testimonials[testimonialIndex].author}</strong>
+            `;
+        }
+    
+        // Auto rotate every 6 seconds
+        setInterval(nextTestimonial, 6000);
+    </script>
+    
+    
     
 </body>
 </html>

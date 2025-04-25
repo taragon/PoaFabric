@@ -572,3 +572,23 @@ ul li {
     color: #333;
   }
   
+  .green-bar {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 4px solid #388E3C;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 12px 12px;
+}
+
+.green-bar h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.green-bar p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
