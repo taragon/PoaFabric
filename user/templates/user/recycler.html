@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <title>Recycler Dashboard | Poafabric</title>
     <link rel="stylesheet" href="{% static 'user/styles.css' %}">
-   
 </head>
+
 <body>
     <div class="dashboard-container">
+
+        <!-- Header Section -->
         <header class="dashboard-header green-bar">
             <h1>Welcome to Recycle</h1>
             <p>Discover what you can recycle and the nearest recycling centers.</p>
         </header>
-        
 
+        <!-- Items Section -->
         <section class="items-section">
             <h2>Items You Can Recycle</h2>
             <div class="items-grid">
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👕 Clothing</h3>
                     <div class="item-details">
@@ -30,7 +32,7 @@
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🛏️ Home Textiles</h3>
                     <div class="item-details">
@@ -42,7 +44,7 @@
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👜 Fashion Accessories</h3>
                     <div class="item-details">
@@ -54,7 +56,7 @@
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🎨 Decorative Textiles</h3>
                     <div class="item-details">
@@ -65,7 +67,7 @@
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👟 Footwear</h3>
                     <div class="item-details">
@@ -76,7 +78,7 @@
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🏭 Industrial Textiles</h3>
                     <div class="item-details">
@@ -87,52 +89,55 @@
                         </ul>
                     </div>
                 </div>
-        
+
             </div>
         </section>
-        
+
+        <!-- Recycling Centers Section -->
         <section class="centers-section">
             <h2>Recycling Centers</h2>
             <ul class="recycling-centers">
-              <li onclick="toggleContact('center1')">
-                <strong>♻️ Strathmore University Recycling Center</strong>
-                <div id="center1" class="contact-info" style="display: none;">
-                  📍 Madaraka, Nairobi<br>
-                  📞 +254 700 123 456<br>
-                  📧 recycle@strathmore.edu
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center2')">
-                <strong>♻️ Riara University Recycling Drop-Off</strong>
-                <div id="center2" class="contact-info" style="display: none;">
-                  📍 Mbagathi Way, Nairobi<br>
-                  📞 +254 711 654 321<br>
-                  📧 green@riara.ac.ke
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center3')">
-                <strong>♻️ Kenyatta University Green Hub</strong>
-                <div id="center3" class="contact-info" style="display: none;">
-                  📍 Thika Road, Nairobi<br>
-                  📞 +254 722 222 222<br>
-                  📧 ku-green@ku.ac.ke
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center4')">
-                <strong>♻️ City Market Plastic Drop-Off Point</strong>
-                <div id="center4" class="contact-info" style="display: none;">
-                  📍 City Market, Nairobi CBD<br>
-                  📞 +254 733 444 555<br>
-                  📧 marketdrop@nairobicity.go.ke
-                </div>
-              </li>
-            </ul>
-          </section>
-          
 
+                <li onclick="toggleContact('center1')">
+                    <strong>♻️ Strathmore University Recycling Center</strong>
+                    <div id="center1" class="contact-info" style="display: none;">
+                        📍 Madaraka, Nairobi<br>
+                        📞 +254 700 123 456<br>
+                        📧 recycle@strathmore.edu
+                    </div>
+                </li>
+
+                <li onclick="toggleContact('center2')">
+                    <strong>♻️ Riara University Recycling Drop-Off</strong>
+                    <div id="center2" class="contact-info" style="display: none;">
+                        📍 Mbagathi Way, Nairobi<br>
+                        📞 +254 711 654 321<br>
+                        📧 green@riara.ac.ke
+                    </div>
+                </li>
+
+                <li onclick="toggleContact('center3')">
+                    <strong>♻️ Kenyatta University Green Hub</strong>
+                    <div id="center3" class="contact-info" style="display: none;">
+                        📍 Thika Road, Nairobi<br>
+                        📞 +254 722 222 222<br>
+                        📧 ku-green@ku.ac.ke
+                    </div>
+                </li>
+
+                <li onclick="toggleContact('center4')">
+                    <strong>♻️ City Market Plastic Drop-Off Point</strong>
+                    <div id="center4" class="contact-info" style="display: none;">
+                        📍 City Market, Nairobi CBD<br>
+                        📞 +254 733 444 555<br>
+                        📧 marketdrop@nairobicity.go.ke
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- Importance Section -->
         <section class="importance-section">
             <h2>Why Recycling Matters</h2>
             <ul>
@@ -144,14 +149,15 @@
             </ul>
         </section>
 
+        <!-- Badge Section -->
         <section class="badge-section">
-  <h2>Your Badge</h2>
-  <div class="user-badge" id="userBadge" title="Your recycling progress badge">
-    🥉<p>Bronze Recycler</p>
-  </div>
-</section>
+            <h2>Your Badge</h2>
+            <div class="user-badge" id="userBadge" title="Your recycling progress badge">
+                🥉<p>Bronze Recycler</p>
+            </div>
+        </section>
 
-          
+        <!-- Progress Impact Section -->
         <section class="progress-impact">
             <h2>Our Recycling Impact</h2>
             <p>Textiles Recycled This Month:</p>
@@ -159,7 +165,8 @@
                 <div class="progress" id="progress-bar">0%</div>
             </div>
         </section>
-        
+
+        <!-- Testimonials Section -->
         <section class="testimonials">
             <h2>What Our Users Say</h2>
             <div class="testimonial-card" id="testimonial-text">
@@ -168,15 +175,17 @@
             </div>
             <button onclick="nextTestimonial()">Next Testimonial</button>
         </section>
-        
 
+        <!-- Button Container -->
         <div class="button-container">
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
                 target="_blank" class="donate-btn">Donate</a>
         </div>
+
     </div>
 
+    <!-- JavaScript Scripts -->
     <script>
         function toggleDetails(card) {
             const details = card.querySelector(".item-details");
@@ -187,22 +196,18 @@
 
     <script>
         function toggleContact(id) {
-          const element = document.getElementById(id);
-          const isVisible = element.style.display === 'block';
-      
-          // Close all contact info blocks
-          document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
-      
-          // Toggle the one that was clicked
-          if (!isVisible) {
-            element.style.display = 'block';
-          }
-        }
-      </script>
-       
+            const element = document.getElementById(id);
+            const isVisible = element.style.display === 'block';
 
-      <script>
-        // Animate Progress Bar
+            document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
+
+            if (!isVisible) {
+                element.style.display = 'block';
+            }
+        }
+    </script>
+
+    <script>
         function animateProgressBar(targetPercent) {
             const bar = document.getElementById("progress-bar");
             let width = 0;
@@ -216,14 +221,13 @@
                 }
             }, 20);
         }
-    
+
         window.onload = function () {
-            animateProgressBar(75);  // Change 75 to your actual count % if dynamic
+            animateProgressBar(75);
         };
     </script>
 
     <script>
-        // Testimonials Data
         const testimonials = [
             {
                 text: `"PoaFabric helped me easily find recycling centers near my school. I feel like I'm part of something big!"`,
@@ -238,9 +242,9 @@
                 author: "– Faith, Recycler"
             }
         ];
-    
+
         let testimonialIndex = 0;
-    
+
         function nextTestimonial() {
             testimonialIndex = (testimonialIndex + 1) % testimonials.length;
             const card = document.getElementById("testimonial-text");
@@ -249,30 +253,30 @@
                 <strong>${testimonials[testimonialIndex].author}</strong>
             `;
         }
-    
-        // Auto rotate every 6 seconds
+
         setInterval(nextTestimonial, 6000);
     </script>
+
     <script>
         const userBadge = document.getElementById("userBadge");
-        const userContribution = 12; // Simulate real data here
-      
+        const userContribution = 12;
+
         function assignBadge(count) {
-          if (count >= 20) {
-            userBadge.classList.add("gold");
-            userBadge.innerHTML = "🥇<p>Gold Recycler</p>";
-          } else if (count >= 10) {
-            userBadge.classList.add("silver");
-            userBadge.innerHTML = "🥈<p>Silver Recycler</p>";
-          } else {
-            userBadge.classList.add("bronze");
-            userBadge.innerHTML = "🥉<p>Bronze Recycler</p>";
-          }
+            if (count >= 20) {
+                userBadge.classList.add("gold");
+                userBadge.innerHTML = "🥇<p>Gold Recycler</p>";
+            } else if (count >= 10) {
+                userBadge.classList.add("silver");
+                userBadge.innerHTML = "🥈<p>Silver Recycler</p>";
+            } else {
+                userBadge.classList.add("bronze");
+                userBadge.innerHTML = "🥉<p>Bronze Recycler</p>";
+            }
         }
-      
+
         assignBadge(userContribution);
-      </script>
-      
-    
+    </script>
+
 </body>
 </html>
+

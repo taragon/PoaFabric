@@ -8,125 +8,126 @@
 </head>
 <body>
     <div class="dashboard-container">
+
+        <!-- HEADER -->
         <header class="dashboard-header blue-bar">
             <h1>Welcome to Upcycle</h1>
             <p>Here are items you can upcycle and nearby recycling centers.</p>
         </header>
         
+        <!-- ITEMS SECTION -->
         <section class="items-section">
             <h2>Item Categories for Upcycling</h2>
             <div class="items-grid">
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👕 Clothing</h3>
                     <div class="item-details">
                         <ul>
-                            <li>👚 Old Shirts-Tote Bags</li>
-                            <li>👖 Jeans-Pouches</li>
-                            <li>🧥 Jackets-Aprons</li>
-                            <li>👗 Dresses-Skirts</li>
+                            <li>👚 Old Shirts - Tote Bags</li>
+                            <li>👖 Jeans - Pouches</li>
+                            <li>🧥 Jackets - Aprons</li>
+                            <li>👗 Dresses - Skirts</li>
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🛏️ Home Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🛌 Bedsheets-Curtains</li>
-                            <li>🛋️ Blankets-Pet Beds</li>
-                            <li>🪟 Curtains-Cushion Covers</li>
+                            <li>🛌 Bedsheets - Curtains</li>
+                            <li>🛋️ Blankets - Pet Beds</li>
+                            <li>🪟 Curtains - Cushion Covers</li>
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👜 Fashion Accessories</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🧢 Caps-Coin Pouches</li>
-                            <li>🧤 Gloves-Stuffed Toys</li>
-                            <li>🧣 Scarves-Headbands</li>
+                            <li>🧢 Caps - Coin Pouches</li>
+                            <li>🧤 Gloves - Stuffed Toys</li>
+                            <li>🧣 Scarves - Headbands</li>
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🎨 Decorative Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🖼️ Wall Hangings-Fabric Art</li>
-                            <li>🪑 Table Runners-Quilts</li>
-                            <li>🪟 Curtains-Fabric Storage Bins</li>
+                            <li>🖼️ Wall Hangings - Fabric Art</li>
+                            <li>🪑 Table Runners - Quilts</li>
+                            <li>🪟 Curtains - Fabric Storage Bins</li>
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>👟 Footwear</h3>
                     <div class="item-details">
                         <ul>
-                            <li>👞 Old Shoes-Planters</li>
-                            <li>🩴 Flip Flops-Key Holders</li>
+                            <li>👞 Old Shoes - Planters</li>
+                            <li>🩴 Flip Flops - Key Holders</li>
                         </ul>
                     </div>
                 </div>
-        
+
                 <div class="item-card" onclick="toggleDetails(this)">
                     <h3>🏭 Industrial Textiles</h3>
                     <div class="item-details">
                         <ul>
-                            <li>🧤 Work Gloves-Pot Holders</li>
-                            <li>🦺 Reflective Vests-Bike Accessories</li>
+                            <li>🧤 Work Gloves - Pot Holders</li>
+                            <li>🦺 Reflective Vests - Bike Accessories</li>
                         </ul>
                     </div>
                 </div>
-        
+
             </div>
         </section>
-        
 
+        <!-- RECYCLING CENTERS -->
         <section class="centers-section">
             <h2>Recycling Centers</h2>
             <ul class="recycling-centers">
-              <li onclick="toggleContact('center1')">
-                <strong>♻️ Strathmore University Recycling Center</strong>
-                <div id="center1" class="contact-info" style="display: none;">
-                  📍 Madaraka, Nairobi<br>
-                  📞 +254 700 123 456<br>
-                  📧 recycle@strathmore.edu
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center2')">
-                <strong>♻️ Riara University Recycling Drop-Off</strong>
-                <div id="center2" class="contact-info" style="display: none;">
-                  📍 Mbagathi Way, Nairobi<br>
-                  📞 +254 711 654 321<br>
-                  📧 green@riara.ac.ke
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center3')">
-                <strong>♻️ Kenyatta University Green Hub</strong>
-                <div id="center3" class="contact-info" style="display: none;">
-                  📍 Thika Road, Nairobi<br>
-                  📞 +254 722 222 222<br>
-                  📧 ku-green@ku.ac.ke
-                </div>
-              </li>
-          
-              <li onclick="toggleContact('center4')">
-                <strong>♻️ City Market Plastic Drop-Off Point</strong>
-                <div id="center4" class="contact-info" style="display: none;">
-                  📍 City Market, Nairobi CBD<br>
-                  📞 +254 733 444 555<br>
-                  📧 marketdrop@nairobicity.go.ke
-                </div>
-              </li>
+                <li onclick="toggleContact('center1')">
+                    <strong>♻️ Strathmore University Recycling Center</strong>
+                    <div id="center1" class="contact-info" style="display: none;">
+                        📍 Madaraka, Nairobi<br>
+                        📞 +254 700 123 456<br>
+                        📧 recycle@strathmore.edu
+                    </div>
+                </li>
+                <li onclick="toggleContact('center2')">
+                    <strong>♻️ Riara University Recycling Drop-Off</strong>
+                    <div id="center2" class="contact-info" style="display: none;">
+                        📍 Mbagathi Way, Nairobi<br>
+                        📞 +254 711 654 321<br>
+                        📧 green@riara.ac.ke
+                    </div>
+                </li>
+                <li onclick="toggleContact('center3')">
+                    <strong>♻️ Kenyatta University Green Hub</strong>
+                    <div id="center3" class="contact-info" style="display: none;">
+                        📍 Thika Road, Nairobi<br>
+                        📞 +254 722 222 222<br>
+                        📧 ku-green@ku.ac.ke
+                    </div>
+                </li>
+                <li onclick="toggleContact('center4')">
+                    <strong>♻️ City Market Plastic Drop-Off Point</strong>
+                    <div id="center4" class="contact-info" style="display: none;">
+                        📍 City Market, Nairobi CBD<br>
+                        📞 +254 733 444 555<br>
+                        📧 marketdrop@nairobicity.go.ke
+                    </div>
+                </li>
             </ul>
-          </section>
-          
+        </section>
+
+        <!-- WHY UPCYCLING MATTERS -->
         <section class="importance-section">
             <h2>Why Upcycling Matters</h2>
             <ul>
@@ -138,79 +139,80 @@
             </ul>
         </section>
 
-        <!-- IMPACT SECTION -->
-<section class="impact-section">
-    <h2 onclick="toggleSection('impactContent')">📊 Textile Impact</h2>
-    <div id="impactContent" class="hidden-content">
-        <p>Textiles Recycled This Month:</p>
-        <div class="progress-bar">
-            <div class="progress" style="width: 60%;">60%</div>
-        </div>
-    </div>
-</section>
+        <!-- TEXTILE IMPACT SECTION -->
+        <section class="impact-section">
+            <h2 onclick="toggleSection('impactContent')">📊 Textile Impact</h2>
+            <div id="impactContent" class="hidden-content">
+                <p>Textiles Recycled This Month:</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">60%</div>
+                </div>
+            </div>
+        </section>
 
-       <!-- TESTIMONIALS -->
-<section class="testimonials">
-    <h2 onclick="toggleSection('testimonialsContent')">💬 What Our Users Say</h2>
-    <div id="testimonialsContent" class="hidden-content">
-        <div class="testimonial-card">
-            <p>"Upcycling helped me create art from rags. Thanks PoaFabric!"</p>
-            <strong>– Zawadi, Artist</strong>
-        </div>
-        <div class="testimonial-card">
-            <p>"Old curtains turned into tote bags! A big win for the planet."</p>
-            <strong>– Mumo, Student</strong>
-        </div>
-    </div>
-</section>
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials">
+            <h2 onclick="toggleSection('testimonialsContent')">💬 What Our Users Say</h2>
+            <div id="testimonialsContent" class="hidden-content">
+                <div class="testimonial-card">
+                    <p>"Upcycling helped me create art from rags. Thanks PoaFabric!"</p>
+                    <strong>– Zawadi, Artist</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Old curtains turned into tote bags! A big win for the planet."</p>
+                    <strong>– Mumo, Student</strong>
+                </div>
+            </div>
+        </section>
 
-<section class="badge-section">
-    <h2>Your Upcycle Badge</h2>
-    <div class="user-badge" id="upcycleBadge" title="Top Upcycler Award">
-      🥇<p>Gold Upcycler</p>
-    </div>
-  </section>
-  
+        <!-- BADGE SECTION -->
+        <section class="badge-section">
+            <h2>Your Upcycle Badge</h2>
+            <div class="user-badge" id="upcycleBadge" title="Top Upcycler Award">
+                🥇<p>Gold Upcycler</p>
+            </div>
+        </section>
+
+        <!-- BUTTONS -->
         <div class="button-container">
             <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" 
-                target="_blank" class="donate-btn">Donate</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDTQ47o4Ewt_Tm1JG2V-cwYWWn7Ndw1_dFzTylBZAlIJmOvQ/viewform" target="_blank" class="donate-btn">Donate</a>
         </div>
+
     </div>
 
+    <!-- SCRIPTS -->
     <script>
         function toggleDetails(card) {
             const details = card.querySelector(".item-details");
             const isVisible = details.style.display === "block";
             details.style.display = isVisible ? "none" : "block";
         }
-    </script>
-    
-    <script>
+
         function toggleContact(id) {
-          const element = document.getElementById(id);
-          const isVisible = element.style.display === 'block';
-      
-          // Close all contact info blocks
-          document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
-      
-          // Toggle the one that was clicked
-          if (!isVisible) {
-            element.style.display = 'block';
-          }
+            const element = document.getElementById(id);
+            const isVisible = element.style.display === 'block';
+            document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
+            if (!isVisible) {
+                element.style.display = 'block';
+            }
         }
-      </script>
-    
-      <script>
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const isVisible = section.style.display === 'block';
+                section.style.display = isVisible ? 'none' : 'block';
+            }
+        }
+
         const upcycleBadge = document.getElementById("upcycleBadge");
-      
         function showGoldBadge() {
-          upcycleBadge.classList.add("gold");
-          upcycleBadge.innerHTML = "🥇<p>Gold Upcycler</p>";
+            upcycleBadge.classList.add("gold");
+            upcycleBadge.innerHTML = "🥇<p>Gold Upcycler</p>";
         }
-      
-        showGoldBadge(); // Assume always top upcycler for now
-      </script>
-      
+        showGoldBadge();
+    </script>
+
 </body>
 </html>
