@@ -128,20 +128,31 @@ button:hover {
     background-color: #005fa3;
 }
 
+/* ===== General Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* ===== Dashboard Header ===== */
 .dashboard-header {
     text-align: center;
     margin-bottom: 40px;
+    background-color: #1b5e20;
+    padding: 30px 20px;
+    color: white;
+    border-radius: 0 0 20px 20px;
 }
 
 .dashboard-header h1 {
     font-size: 2.8em;
-    color: #1b5e20;
+    color: white;
 }
 
 .dashboard-header p {
     font-size: 1.3em;
-    color: #4caf50;
+    color: #c8e6c9;
 }
 
 /* ===== Sections ===== */
@@ -193,23 +204,33 @@ section {
     color: #444;
 }
 
-/* ===== Centers List ===== */
+/* ===== Recycling Centers ===== */
 .centers-section ul {
     list-style: none;
     padding-left: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
 .centers-section li {
-    background: #e0f2f1;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-weight: 500;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 12px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #2e7d32;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-/* ===== Importance Section & Progress Impact ===== */
+.centers-section li:hover {
+    background-color: #c8e6c9;
+    transform: scale(1.05);
+}
+
+/* ===== Importance Section ===== */
 .importance-section, .progress-impact {
     background: #f1f8e9;
     padding: 25px;
@@ -217,6 +238,7 @@ section {
     border-radius: 12px;
 }
 
+/* ===== Progress Bar ===== */
 .progress-bar {
     background-color: #c8e6c9;
     border-radius: 20px;
@@ -228,13 +250,15 @@ section {
 .progress {
     background-color: #43a047;
     height: 100%;
+    width: 0%;
     text-align: center;
     color: white;
     line-height: 25px;
     font-weight: bold;
+    transition: width 2s ease-in-out;
 }
 
-/* ===== Testimonials ===== */
+/* ===== Testimonials Section ===== */
 .testimonials {
     margin-bottom: 40px;
     background: #f9f9f9;
@@ -255,6 +279,23 @@ section {
 .testimonial-card p {
     font-size: 1.1em;
     color: #555;
+}
+
+/* ===== Testimonial Button ===== */
+.testimonials button {
+    background-color: #43a047;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.testimonials button:hover {
+    background-color: #388e3c;
 }
 
 /* ===== Button Groups (Donate/Logout) ===== */
@@ -281,7 +322,7 @@ section {
     transform: scale(1.05);
 }
 
-/* ===== Badges Section ===== */
+/* ===== Badge Section ===== */
 .badge-section {
     text-align: center;
     margin: 50px auto;
@@ -306,12 +347,12 @@ section {
     background: #bbb;
     font-size: 1.2rem;
     font-weight: bold;
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0.5;
+    opacity: 0.8;
     transform: scale(0.9);
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -334,6 +375,7 @@ section {
     animation: glow 2s infinite alternate;
 }
 
+/* ===== Animations ===== */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
@@ -365,6 +407,7 @@ iframe {
     width: 100%;
     height: 400px;
 }
+
 
 /* ===== Blue Bar Header for Upcycler Page ===== */
 .blue-bar {
@@ -440,4 +483,73 @@ iframe {
 .blue-bar.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== Marketplace Section ===== */
+.marketplace-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.marketplace-section h2 {
+    font-size: 2.5em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.marketplace-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.marketplace-item {
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marketplace-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.marketplace-item h3 {
+    margin-top: 15px;
+    color: #388e3c;
+}
+
+.marketplace-item p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.buy-btn {
+    background-color: #43a047;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #2e7d32;
+}
+
+.marketplace-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
