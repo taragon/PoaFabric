@@ -170,7 +170,7 @@
 
         <!-- TEXTILE IMPACT SECTION -->
         <section class="impact-section">
-            <h2 onclick="toggleSection('impactContent')">Our Textile Impact</h2>
+            <h2 onclick="toggleSection('impactContent')">Our Upcycling Impact</h2>
             <div id="impactContent" class="hidden-content">
                 <p>Textiles Recycled This Month:</p>
                 <div class="progress-bar">
@@ -242,6 +242,58 @@
         }
         showGoldBadge();
     </script>
+    <script>
+    function toggleDetails(card) {
+        const details = card.querySelector(".item-details");
+        const isVisible = details.style.display === "block";
+        details.style.display = isVisible ? "none" : "block";
+    }
+
+    function toggleContact(id) {
+        const element = document.getElementById(id);
+        const isVisible = element.style.display === 'block';
+        document.querySelectorAll('.contact-info').forEach(el => el.style.display = 'none');
+        if (!isVisible) {
+            element.style.display = 'block';
+        }
+    }
+
+    function toggleSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const isVisible = section.style.display === 'block';
+            section.style.display = isVisible ? 'none' : 'block';
+        }
+    }
+
+    const upcycleBadge = document.getElementById("upcycleBadge");
+    function showGoldBadge() {
+        upcycleBadge.classList.add("gold");
+        upcycleBadge.innerHTML = "🥇<p>Gold Upcycler</p>";
+    }
+    showGoldBadge();
+
+    // --- New Marketplace Logic ---
+
+    // Handle buy buttons
+    const buyButtons = document.querySelectorAll('.buy-btn');
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.previousElementSibling.previousElementSibling.textContent;
+            showPurchasePopup(itemName);
+        });
+    });
+
+    function showPurchasePopup(itemName) {
+        const confirmed = confirm(`Do you want to purchase "${itemName}"?`);
+        if (confirmed) {
+            alert(`🎉 Thank you for purchasing the ${itemName}! We will contact you soon.`);
+        } else {
+            alert(`❌ Purchase canceled.`);
+        }
+    }
+</script>
+
 
 </body>
 </html>

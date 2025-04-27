@@ -553,3 +553,34 @@ iframe {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
+.recycle-image {
+    display: block;
+    margin: 20px auto; /* <-- centers it horizontally */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Buy now button*/
+.buy-btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #005fa3;
+}
+.dashboard-header h1 {
+    font-weight: bold;
+    color: black;
+    font-size: 2.5rem; /* Make it slightly bigger */
+    margin-bottom: 10px;
+}
