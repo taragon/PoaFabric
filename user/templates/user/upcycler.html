@@ -166,12 +166,13 @@
                 </div>
             </div>
         </section>
-
+<!-- My purchases -->
         <section class="purchases-section">
             <h2>🛒 My Purchases</h2>
             <div id="purchaseList" class="purchase-list">
                 <p>No purchases yet.</p>
             </div>
+            <button id="clearPurchasesBtn" class="clear-btn">Clear Purchases</button>
         </section>
         
         
@@ -340,6 +341,38 @@
                 purchaseList.appendChild(itemDiv);
             });
         }
+            // Load and display purchases
+    function renderPurchases() {
+        const purchaseList = document.getElementById("purchaseList");
+        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+
+        if (purchases.length === 0) {
+            purchaseList.innerHTML = "<p>No purchases yet.</p>";
+            return;
+        }
+
+        purchaseList.innerHTML = "";
+        purchases.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "purchase-item";
+            itemDiv.innerHTML = `<strong>${item.name}</strong><p>${item.description}</p>`;
+            purchaseList.appendChild(itemDiv);
+        });
+    }
+
+    renderPurchases(); // call this after DOM loads
+
+    // Clear purchases button logic
+    const clearBtn = document.getElementById("clearPurchasesBtn");
+    clearBtn.addEventListener("click", () => {
+        const confirmed = confirm("⚠️ Are you sure you want to clear all your purchases?");
+        if (confirmed) {
+            localStorage.removeItem("purchases");
+            renderPurchases();
+            alert("🧹 Purchases cleared successfully.");
+        }
+    });
+
     
     </script>
 

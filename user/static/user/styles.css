@@ -552,6 +552,8 @@ iframe {
 .buy-btn:hover {
     background-color: #005fa3;
 }
+
+/* my purchases*/
 .purchase-list {
     margin-top: 1em;
     padding: 1em;
@@ -566,3 +568,6 @@ iframe {
     background: #e6ffe6;
     border-radius: 8px;
 }
+
+
+
