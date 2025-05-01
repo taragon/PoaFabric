@@ -167,14 +167,15 @@
             </div>
         </section>
 <!-- My purchases -->
-        <section class="purchases-section">
-            <h2>🛒 My Purchases</h2>
-            <div id="purchaseList" class="purchase-list">
-                <p>No purchases yet.</p>
-            </div>
-            <button id="clearPurchasesBtn" class="clear-btn">Clear Purchases</button>
-        </section>
-        
+<section class="purchases-section">
+    <h2>🛒 My Purchases</h2>
+    <div id="purchaseList" class="purchase-list">
+        <p>No purchases yet.</p>
+    </div>
+    <button id="clearPurchasesBtn" class="clear-btn">Clear Purchases</button>
+    <button id="downloadReceiptBtn" class="download-btn">Download Receipt</button>
+</section>
+
         
 
         <!-- TEXTILE IMPACT SECTION -->
@@ -372,6 +373,31 @@
             alert("🧹 Purchases cleared successfully.");
         }
     });
+
+    // Download receipt logic
+const downloadBtn = document.getElementById("downloadReceiptBtn");
+downloadBtn.addEventListener("click", () => {
+    const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+
+    if (purchases.length === 0) {
+        alert("🛑 No purchases to download.");
+        return;
+    }
+
+    let receipt = `🧾 PoaFabric Receipt\nDate: ${new Date().toLocaleString()}\n\n`;
+    purchases.forEach((item, index) => {
+        receipt += `${index + 1}. ${item.name} - ${item.description}\n`;
+    });
+
+    const blob = new Blob([receipt], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "poafabric_receipt.txt";
+    a.click();
+    URL.revokeObjectURL(url);
+});
 
     
     </script>
