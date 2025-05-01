@@ -11,13 +11,13 @@
 
         <!-- HEADER -->
         <header class="dashboard-header blue-bar">
-            <h1>Welcome to Upcycle</h1>
+            <h1>REUSE UPCYLE!</h1>
             <p>Here are items you can upcycle and nearby recycling centers.</p>
         </header>
         
         <!-- ITEMS SECTION -->
         <section class="items-section">
-            <h2>Item Categories for Upcycling</h2>
+            <h2>UPCYCLING ITEMS</h2>
             <div class="items-grid">
 
                 <div class="item-card" onclick="toggleDetails(this)">
@@ -90,7 +90,7 @@
 
         <!-- RECYCLING CENTERS -->
         <section class="centers-section">
-            <h2>Recycling Centers</h2>
+            <h2>RECYCLING CENTERS</h2>
             <ul class="recycling-centers">
                 <li onclick="toggleContact('center1')">
                     <strong>♻️ Strathmore University Upcycling Center</strong>
@@ -189,20 +189,26 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section class="testimonials">
-            <h2 onclick="toggleSection('testimonialsContent')">💬 What Our Users Say</h2>
-            <div id="testimonialsContent" class="hidden-content">
-                <div class="testimonial-card">
-                    <p>"Upcycling helped me create art from rags. Thanks PoaFabric!"</p>
-                    <strong>– Ryan, Artist</strong>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Old curtains turned into tote bags! A big win for the planet."</p>
-                    <strong>– NJANJA, Student</strong>
-                </div>
+        <div id="testimonialsContent" class="hidden-content">
+            <div class="testimonial-card active">
+                <p>"Upcycling helped me create art from rags. Thanks PoaFabric!"</p>
+                <strong>– Ryan, Artist</strong>
             </div>
-        </section>
+            <div class="testimonial-card">
+                <p>"Old curtains turned into tote bags! A big win for the planet."</p>
+                <strong>– NJANJA, Student</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"My denim jeans are now beautiful cushion covers! Amazing idea!"</p>
+                <strong>– Sarah, Designer</strong>
+            </div>
+        
+            <!-- Add your Next button here inside testimonialsContent -->
+            <button id="nextTestimonialBtn">Next</button>
+        </div>
+        
+        
+        
 
         <!-- BADGE SECTION -->
         <section class="badge-section">
@@ -399,8 +405,68 @@ downloadBtn.addEventListener("click", () => {
     URL.revokeObjectURL(url);
 });
 
-    
+        
     </script>
+    <script>
+        // Animate the progress bar when it appears
+        document.addEventListener("DOMContentLoaded", function() {
+            const progress = document.querySelector(".progress");
+            let width = 0;
+            const targetWidth = 60; // Your target progress in %
+        
+            function animateProgress() {
+                if (width < targetWidth) {
+                    width++;
+                    progress.style.width = width + "%";
+                    progress.textContent = width + "%";
+                    setTimeout(animateProgress, 20); // Speed of animation
+                }
+            }
+        
+            // Start animation when the page loads
+            animateProgress();
+        });
+        </script>
+
+        <script>
+            // Testimonials Carousel
+            document.addEventListener("DOMContentLoaded", function () {
+                const testimonials = document.querySelectorAll('.testimonial-card');
+                let current = 0;
+            
+                function showTestimonial(index) {
+                    testimonials.forEach((testimonial, idx) => {
+                        testimonial.style.display = idx === index ? 'block' : 'none';
+                    });
+                }
+            
+                function nextTestimonial() {
+                    current = (current + 1) % testimonials.length;
+                    showTestimonial(current);
+                }
+            
+                showTestimonial(current);
+                setInterval(nextTestimonial, 4000); // Change testimonial every 4 seconds
+            });
+
+            const testimonialCards = document.querySelectorAll('#testimonialsContent .testimonial-card');
+const nextBtn = document.getElementById('nextTestimonialBtn');
+
+let currentTestimonial = 0;
+
+nextBtn.addEventListener('click', function() {
+    // Hide current
+    testimonialCards[currentTestimonial].classList.remove('active');
+
+    // Move to next (loop back if at the end)
+    currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+
+    // Show next
+    testimonialCards[currentTestimonial].classList.add('active');
+});
+
+            </script>
+            
 
     
     

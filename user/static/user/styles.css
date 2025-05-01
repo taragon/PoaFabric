@@ -589,4 +589,13 @@ iframe {
     background-color: #218838;
 }
 
+/* button hovering */
+.buy-btn:hover, .logout-btn:hover, .donate-btn:hover, .clear-btn:hover, .download-btn:hover {
+    background-color: #0077cc;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+
 
