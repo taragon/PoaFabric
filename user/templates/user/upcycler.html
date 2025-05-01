@@ -166,6 +166,14 @@
                 </div>
             </div>
         </section>
+
+        <section class="purchases-section">
+            <h2>🛒 My Purchases</h2>
+            <div id="purchaseList" class="purchase-list">
+                <p>No purchases yet.</p>
+            </div>
+        </section>
+        
         
 
         <!-- TEXTILE IMPACT SECTION -->
@@ -293,6 +301,50 @@
         }
     }
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buyButtons = document.querySelectorAll('.buy-btn');
+    
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const itemCard = this.closest(".marketplace-item");
+                const itemName = itemCard.querySelector("h3").textContent;
+                const itemDesc = itemCard.querySelector("p").textContent;
+    
+                const confirmed = confirm(`🛍️ Do you want to purchase "${itemName}"?\n\n${itemDesc}`);
+                if (confirmed) {
+                    // Store purchase in localStorage
+                    let purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+                    purchases.push({ name: itemName, description: itemDesc });
+                    localStorage.setItem("purchases", JSON.stringify(purchases));
+    
+                    alert(`🎉 Thank you for purchasing "${itemName}"! Your order has been received.`);
+                } else {
+                    alert(`❌ Purchase cancelled.`);
+                }
+            });
+        });
+    });
+
+        // Load and display purchases
+        const purchaseList = document.getElementById("purchaseList");
+        const purchases = JSON.parse(localStorage.getItem("purchases") || "[]");
+    
+        if (purchases.length > 0) {
+            purchaseList.innerHTML = "";
+            purchases.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "purchase-item";
+                itemDiv.innerHTML = `<strong>${item.name}</strong><p>${item.description}</p>`;
+                purchaseList.appendChild(itemDiv);
+            });
+        }
+    
+    </script>
+
+    
+    
 
 
 </body>

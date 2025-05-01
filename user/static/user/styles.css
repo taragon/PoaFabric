@@ -402,6 +402,7 @@ iframe {
     height: 400px;
 }
 
+
 /* ===== Blue Header Bar ===== */
 .blue-bar {
     background-color: #2196F3;
@@ -550,4 +551,18 @@ iframe {
 
 .buy-btn:hover {
     background-color: #005fa3;
+}
+.purchase-list {
+    margin-top: 1em;
+    padding: 1em;
+    border: 2px dashed green;
+    border-radius: 12px;
+    background-color: #f0fff0;
+}
+
+.purchase-item {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background: #e6ffe6;
+    border-radius: 8px;
 }
