@@ -1,4 +1,4 @@
-/* ===== Reset and Base Styles ===== */
+/* ===== Reset and Base Styling ===== */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* ===== General Container ===== */
+/* ===== Container Styling ===== */
 .container, .dashboard-container {
     width: 100%;
     min-height: 100vh;
@@ -29,12 +29,7 @@ html, body {
     }
 }
 
-/* ===== Homepage Left-Right Layout ===== */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* ===== Homepage Layout ===== */
 .container {
     display: flex;
     min-height: 100vh;
@@ -49,7 +44,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-text-align: center;
+    text-align: center;
 }
 
 .left-section h1 span {
@@ -128,13 +123,6 @@ button:hover {
     background-color: #005fa3;
 }
 
-/* ===== General Reset ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* ===== Dashboard Header ===== */
 .dashboard-header {
     text-align: center;
@@ -150,17 +138,24 @@ button:hover {
     color: white;
 }
 
+/* Extra styling moved here for specificity */
+.dashboard-header h1 {
+    font-weight: bold;
+    color: black;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
 .dashboard-header p {
     font-size: 1.3em;
     color: #c8e6c9;
 }
 
-/* ===== Sections ===== */
+/* ===== Sections and Cards ===== */
 section {
     margin-bottom: 60px;
 }
 
-/* ===== Items Grid ===== */
 .items-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -230,7 +225,7 @@ section {
     transform: scale(1.05);
 }
 
-/* ===== Importance Section ===== */
+/* ===== Importance & Progress Sections ===== */
 .importance-section, .progress-impact {
     background: #f1f8e9;
     padding: 25px;
@@ -238,7 +233,6 @@ section {
     border-radius: 12px;
 }
 
-/* ===== Progress Bar ===== */
 .progress-bar {
     background-color: #c8e6c9;
     border-radius: 20px;
@@ -281,7 +275,7 @@ section {
     color: #555;
 }
 
-/* ===== Testimonial Button ===== */
+/* Testimonial CTA Button */
 .testimonials button {
     background-color: #43a047;
     color: white;
@@ -298,7 +292,7 @@ section {
     background-color: #388e3c;
 }
 
-/* ===== Button Groups (Donate/Logout) ===== */
+/* ===== Donate/Logout Buttons ===== */
 .button-container {
     display: flex;
     justify-content: center;
@@ -386,7 +380,7 @@ section {
     100% { box-shadow: 0 0 20px rgba(255,255,255,0.9); }
 }
 
-/* ===== Hero Image Section ===== */
+/* ===== Hero Image ===== */
 .hero-img {
     max-width: 100%;
     height: auto;
@@ -395,7 +389,7 @@ section {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* ===== Map Section (Google Maps) ===== */
+/* ===== Map Section ===== */
 .map-section {
     margin: 50px 0;
     text-align: center;
@@ -408,8 +402,7 @@ iframe {
     height: 400px;
 }
 
-
-/* ===== Blue Bar Header for Upcycler Page ===== */
+/* ===== Blue Header Bar ===== */
 .blue-bar {
     background-color: #2196F3;
     color: white;
@@ -428,6 +421,7 @@ iframe {
 .blue-bar p {
     font-size: 18px;
 }
+
 /* ===== Animation Helpers ===== */
 .hidden {
     opacity: 0;
@@ -440,7 +434,6 @@ iframe {
     transform: translateY(0);
 }
 
-/* Testimonial Slide-In */
 .testimonial-card.hidden {
     transform: translateX(-100px);
     opacity: 0;
@@ -451,7 +444,6 @@ iframe {
     opacity: 1;
 }
 
-/* Badge Soft Pop */
 .badge.hidden, .user-badge.hidden {
     opacity: 0;
     transform: scale(0.7);
@@ -463,7 +455,6 @@ iframe {
     transition: all 0.8s ease;
 }
 
-/* Info Boxes and Sections Smooth Scroll */
 .info-box.hidden, 
 .importance-section.hidden, 
 .progress-impact.hidden, 
@@ -534,28 +525,10 @@ iframe {
     color: #555;
 }
 
-.buy-btn {
-    background-color: #43a047;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.buy-btn:hover {
-    background-color: #2e7d32;
-}
-
-.marketplace-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
+/* ===== Recycle Image Styling ===== */
 .recycle-image {
     display: block;
-    margin: 20px auto; /* <-- centers it horizontally */
+    margin: 20px auto;
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -563,7 +536,7 @@ iframe {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Buy now button*/
+/* ===== Buy Now Button (final version) ===== */
 .buy-btn {
     background-color: #0077cc;
     color: white;
@@ -577,10 +550,4 @@ iframe {
 
 .buy-btn:hover {
     background-color: #005fa3;
-}
-.dashboard-header h1 {
-    font-weight: bold;
-    color: black;
-    font-size: 2.5rem; /* Make it slightly bigger */
-    margin-bottom: 10px;
 }
