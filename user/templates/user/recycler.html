@@ -140,6 +140,31 @@
                 </li>
 
             </ul>
+
+            <div id="map" style="height: 400px; margin-top: 20px;"></div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    const map = L.map('map').setView([-1.2921, 36.8219], 12); // Nairobi
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const centers = [
+        { name: "Strathmore University Recycling Center", lat: -1.3090, lng: 36.8166 },
+        { name: "Riara University Recyclin Drop-Off", lat: -1.3003, lng: 36.7905 },
+        { name: "Kenyatta University Greenhub", lat: -1.1800, lng: 36.9368 },
+        { name: "City Market Textile Drop-Off", lat: -1.2833, lng: 36.8167 }
+    ];
+
+    centers.forEach(center => {
+        L.marker([center.lat, center.lng])
+            .addTo(map)
+            .bindPopup(`<b>${center.name}</b>`);
+    });
+</script>
+
         </section>
 
         <!-- Importance Section -->
